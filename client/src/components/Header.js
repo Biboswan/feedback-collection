@@ -22,7 +22,6 @@ class Header extends Component {
     }
 
     render() {
-        console.log(`qadsd${this.props}`);
         return (
             <nav>
             <div className="nav-wrapper">
