@@ -5,7 +5,8 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 
 const keys = require('./config/keys');
-require('./models/Users');
+require('./models/User');
+require('./models/Survey');
 require('./services/passport'); // order of require matter
 
 mongoose.connect(keys.mongoURI);
@@ -23,6 +24,7 @@ app.use(passport.initialize()).use(passport.session());
 
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
 	// production will serve up production assets 
